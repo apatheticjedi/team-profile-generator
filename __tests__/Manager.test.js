@@ -1,7 +1,7 @@
-const Employee = require('../lib/Employee');
+const Manager = require('../lib/Manager')
 
 test("gets Manager's role", () => {
-    const employee = new Employee('Dave');
+    const employee = new Manager('Dave');
 
     expect(employee.getRole()).toBe('Manager');
 });

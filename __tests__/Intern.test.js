@@ -1,13 +1,13 @@
-const Employee = require('../lib/Employee');
+const Intern = require('../lib/Intern');
 
 test("gets intern's role", () => {
-    const employee = new Employee('Dave');
+    const employee = new Intern('Dave');
 
     expect(employee.getRole()).toBe('Intern');
 });
 
 test("gets intern's school", () => {
-    const employee = new Employee('Dave');
+    const employee = new Intern('Dave', 1, 'dave@email.com', 'UofO');
 
-    expect(employee.getSchool()).toEqual(expect.any(String));
+    expect(employee.getSchool()).toBe('UofO');
 });
