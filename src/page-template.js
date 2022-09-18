@@ -1,3 +1,26 @@
+const Employee = require('../lib/Employee');
+
+const generateTeam = teamArr => {
+    return `
+    <section class="team-profiles">
+    ${teamArr
+        .map(({ role, name, id, email, officeNumber, github, school }) =>{
+            return `
+            <div class="team-member"
+            <h3> class="job-title">${role}</h3>
+            <h3>${name}</h3>
+            <p>${id}</p>
+            <p>${email}</p>
+            <p>${officeNumber}</p>
+            <p>${github}</p>
+            <p>${school}</p>
+            </div>
+            </section>
+            `
+    }) }
+    `;
+}
+
 module.exports = templateData => {
 
     return `
@@ -12,8 +35,16 @@ module.exports = templateData => {
     </head>
     
     <body>
+    <header>
+    <h1>My Team</h1>
+    </header>
+
+    <main>
+
+    ${generateTeam()}
+    </main>
 
     </body>
     </html>
     `;
-};
+}
