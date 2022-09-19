@@ -11,22 +11,57 @@ const managerQuestion = [
     {
         type: 'input',
         name: 'name',
-        message: "Enter the Manager's name:"
+        message: "Enter the Manager's name:", 
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the Manager's name!");
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'id',
-        message: "Enter the Manager's ID number:"
+        message: "Enter the Manager's ID number:",
+        validate: idInput => {
+            if (isNaN(idInput)) {
+                console.log(" is not a valid number!");
+                return false;
+            } else if (!idInput){
+                console.log('Please enter a valid number!');
+                return false;
+            } else {
+                return true;
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
-        message: "Enter the Manager's email address:"
+        message: "Enter the Manager's email address:",
+        validate: emailInput => {
+            if(emailInput.includes('@')) {
+                return true;
+            } else {
+                console.log('Please enter a valid email address!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'officeNumber',
-        message: "Enter the Manager's office number:"
+        message: "Enter the Manager's office number:",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the office number!");
+                return false;
+            }
+        }
     }
 ];
 
@@ -34,22 +69,57 @@ const engineerQuestion = [
     {
         type: 'input',
         name: 'name',
-        message: "Enter the Engineer's name:"
+        message: "Enter the Engineer's name:",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the Engineer's name!");
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'id',
-        message: "Enter the Engineer's ID number:"
+        message: "Enter the Engineer's ID number:",
+                validate: idInput => {
+            if (isNaN(idInput)) {
+                console.log(" is not a valid number!");
+                return false;
+            } else if (!idInput){
+                console.log('Please enter a valid number!');
+                return false;
+            } else {
+                return true;
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
-        message: "Enter the Engineer's email address:"
+        message: "Enter the Engineer's email address:",
+        validate: emailInput => {
+            if(emailInput.includes('@')) {
+                return true;
+            } else {
+                console.log('Please enter a valid email address!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'github',
-        message: "Enter the Engineer's GitHub username:"
+        message: "Enter the Engineer's GitHub username:",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter a valid username!");
+                return false;
+            }
+        }
     }
 ];
 
@@ -57,22 +127,57 @@ const internQuestion = [
     {
         type: 'input',
         name: 'name',
-        message: "Enter the Intern's name:"
+        message: "Enter the Intern's name:",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the Intern's name!");
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'id',
-        message: "Enter the Intern's ID number:"
+        message: "Enter the Intern's ID number:",
+        validate: idInput => {
+            if (isNaN(idInput)) {
+                console.log(" is not a valid number!");
+                return false;
+            } else if (!idInput){
+                console.log('Please enter a valid number!');
+                return false;
+            } else {
+                return true;
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
-        message: "Enter the Intern's email address:"
+        message: "Enter the Intern's email address:",
+        validate: emailInput => {
+            if(emailInput.includes('@')) {
+                return true;
+            } else {
+                console.log('Please enter a valid email address!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'school',
-        message: "What school does this intern attend?"
+        message: "What school does the intern attend?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter valid school!");
+                return false;
+            }
+        }
     }
 ];
 
