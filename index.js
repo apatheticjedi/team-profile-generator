@@ -81,7 +81,6 @@ const promptManager = () => {
         .then(managerInfo => {
             const manager = new Manager(managerInfo.name, managerInfo.id, managerInfo.email, managerInfo.officeNumber);
             employeeInfo.push(manager);
-            console.log(employeeInfo);
         }).then(promptAdd)
 }
 
@@ -113,7 +112,12 @@ const promptAdd = () => {
     } else if (data.options === 'Add Intern') {
         promptIntern();
     } else {
-        console.log(employeeInfo);
+        fs.writeFile('./dist/index.html', templateData(employeeInfo), err => {
+            if (err) {
+                throw err;
+            }
+        })
+        console.log('Page created!');
     }
     return;
     })

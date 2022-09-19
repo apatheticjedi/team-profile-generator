@@ -1,13 +1,25 @@
-const Employee = require('../lib/Employee');
-
-const generateTeam = teamArr => {
+const generateTeam = employeeInfo => {
     return `
     <section class="team-profiles">
-    ${teamArr
-        .map(({ role, name, id, email, officeNumber, github, school }) =>{
+    ${employeeInfo
+        .map(( {name, id, email, officeNumber, github, school}) => {
+            let title = '';
+            if (officeNumber){
+                github = "";
+                school = "";
+                title = 'Manager';
+            } else if (github) {
+                officeNumber = "";
+                school = "";
+                title = 'Engineer';
+            } else if (school) {
+                officeNumber = "";
+                github = "";
+                title = 'Intern';
+            }
             return `
-            <div class="team-member"
-            <h3> class="job-title">${role}</h3>
+            <div class="team-member">
+            <h3 class="job-title">${title}</h3>
             <h3>${name}</h3>
             <p>${id}</p>
             <p>${email}</p>
@@ -17,11 +29,14 @@ const generateTeam = teamArr => {
             </div>
             </section>
             `
-    }) }
+    })
+}
     `;
 }
 
 module.exports = templateData => {
+
+    const employeeInfo = templateData;
 
     return `
     <!DOCTYPE html>
@@ -41,7 +56,7 @@ module.exports = templateData => {
 
     <main>
 
-    ${generateTeam()}
+    ${generateTeam(employeeInfo)}
     </main>
 
     </body>
