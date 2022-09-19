@@ -222,6 +222,11 @@ const promptAdd = () => {
                 throw err;
             }
         })
+        fs.copyFile('./src/style.css', './dist/style.css', err => {
+            if (err) {
+                throw err;
+            }
+        })
         console.log('Page created!');
     }
     return;
