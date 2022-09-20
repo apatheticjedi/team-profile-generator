@@ -7,6 +7,7 @@ const Intern = require('./lib/Intern');
 
 const employeeInfo = [];
 
+// initial questions to prompt manager with validation
 const managerQuestion = [
     {
         type: 'input',
@@ -65,6 +66,7 @@ const managerQuestion = [
     }
 ];
 
+// questions to prompt for Engineer information with validation
 const engineerQuestion = [
     {
         type: 'input',
@@ -123,6 +125,7 @@ const engineerQuestion = [
     }
 ];
 
+// questions to prompt for Intern information with validation
 const internQuestion = [
     {
         type: 'input',
@@ -181,6 +184,7 @@ const internQuestion = [
     }
 ];
 
+// prompt initial questions for manager then prompt menu to add more employees or create HTML
 const promptManager = () => {
     inquirer.prompt(managerQuestion)
         .then(managerInfo => {
@@ -189,6 +193,7 @@ const promptManager = () => {
         }).then(promptAdd)
 }
 
+// if Engineer selected from promptAdd, ask Engineer questions then promptAdd
 const promptEngineer = () => {
     inquirer.prompt(engineerQuestion)
         .then(engineerInfo => {
@@ -197,6 +202,7 @@ const promptEngineer = () => {
         }).then(promptAdd)
 }
 
+// if Intern is selected from promptAdd, ask Intern questions then promptAdd
 const promptIntern = () => {
     inquirer.prompt(internQuestion)
         .then(internInfo => {
@@ -205,6 +211,7 @@ const promptIntern = () => {
         }).then(promptAdd)
 }
 
+// options to add another employee or create HTML file
 const promptAdd = () => {
     inquirer.prompt({
         type: 'list',

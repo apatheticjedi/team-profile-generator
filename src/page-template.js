@@ -9,17 +9,17 @@ const generateTeam = employeeInfo => {
                     github = "";
                     school = "";
                     title = '<i class="fa-solid fa-mug-saucer"></i><br>Manager';
-                    officeNumber = `Office Number: ${officeNumber}`
+                    officeNumber = `Office Number: ${officeNumber}`;
                 } else if (github) {
                     officeNumber = "";
                     school = "";
                     title = '<i class="fa-solid fa-laptop-code"></i><br>Engineer';
-                    github = `GitHub: <a href="https://github.com/${github}">${github}</a>`
+                    github = `GitHub: <a href="https://github.com/${github}">${github}</a>`;
                 } else if (school) {
                     officeNumber = "";
                     github = "";
                     title = '<i class="fa-solid fa-graduation-cap"></i><br>Intern';
-                    school = `School: ${school}`
+                    school = `School: ${school}`;
                 }
                 return `
                 <div class="team-member card shadow text-center mt-3 mx-2 col-8 col-sm-5 col-md-4 col-lg-3">
