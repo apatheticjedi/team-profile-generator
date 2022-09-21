@@ -17,7 +17,9 @@
 
 ## Description
 
-This is an application that uses Node.js to generate a team profile HTML page with information about each team member including: Job Title, Name, ID number, email address, and role-specific information. The user is prompted to enter the appropriate information when the application is initialized then a styled HTML page is generated in the /dist directory.
+This is an application that uses Node.js to generate a team profile HTML page with information about each team member including: Job Title, Name, ID number, email address, and role-specific information. The user is prompted to enter the appropriate information when the application is initialized then a styled HTML page is generated in the dist/ directory.
+
+![Team Profile Generator Screenshot](./lib/assets/screencapture-team-profile-generator.png)
 
 ### Built With
 
@@ -48,7 +50,9 @@ To use, type
 ```
 node index
 ```
-in the command line, then answer the questions as prompted. Once the Manager's information is entered, then again after each Employee's information is entered, the user is prompted to create another employee or finish to create the HTML file. The generated file and stylesheet are then created in the /dist directory
+in the command line, then answer the questions as prompted. Once the Manager's information is entered, then again after each Employee's information is entered, the user is prompted to create another employee or finish to create the HTML file. The generated file and stylesheet are then created in the dist/ directory
+
+[Walkthrough Video](https://youtu.be/cCsLBpfN2Gk)
 
 ## Contributing
 

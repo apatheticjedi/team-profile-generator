@@ -9,27 +9,27 @@ const generateTeam = employeeInfo => {
                     github = "";
                     school = "";
                     title = '<i class="fa-solid fa-mug-saucer"></i><br>Manager';
-                    officeNumber = `Office Number: ${officeNumber}`;
+                    officeNumber = `<strong>Office Number:</strong> ${officeNumber}`;
                 } else if (github) {
                     officeNumber = "";
                     school = "";
                     title = '<i class="fa-solid fa-laptop-code"></i><br>Engineer';
-                    github = `GitHub: <a href="https://github.com/${github}">${github}</a>`;
+                    github = `<strong>GitHub:</strong> <a href="https://github.com/${github}">${github}</a>`;
                 } else if (school) {
                     officeNumber = "";
                     github = "";
                     title = '<i class="fa-solid fa-graduation-cap"></i><br>Intern';
-                    school = `School: ${school}`;
+                    school = `<strong>School:</strong> ${school}`;
                 }
                 return `
-                <div class="team-member card shadow text-center mt-3 mx-2 col-8 col-sm-5 col-md-4 col-lg-3">
+                <div class="team-member card shadow text-center mt-3 mx-1 col-8 col-sm-5 col-md-4 col-lg-3 col-xl-2">
                     <div class="card-header text-white bg-primary">
                         <h2>${title}</h2>
                         <h4>${name}</h4>
                     </div>
                     <div class="card-body">
-                        <p>ID: ${id}</p>
-                        <p>Email: <a href ="mailto:${email}">${email}</a></p>
+                        <p><strong>ID:</strong> ${id}</p>
+                        <p><strong>Email:</strong> <a href ="mailto:${email}">${email}</a></p>
                         <p>${officeNumber}</p>
                         <p>${github}</p>
                         <p>${school}</p>
@@ -66,7 +66,7 @@ module.exports = templateData => {
             <h1><i class="fa-solid fa-people-roof"></i> My Team</h1>
         </header>
 
-        <main class="container">
+        <main>
 
             ${generateTeam(employeeInfo)}
 
